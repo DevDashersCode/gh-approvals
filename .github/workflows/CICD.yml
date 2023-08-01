@@ -43,7 +43,7 @@ jobs:
       name: Dev
     steps:
       - name: Deploy
-        run: echo in Deploy to Dev! ${{env.VAULT_URL}}
+        run: echo in Deploy to Dev! ${{ env.VAULT_URL }}
   StagingDeploy:
     name: Deploy to Staging
     if: github.event.ref == 'refs/heads/main'
@@ -53,7 +53,7 @@ jobs:
       name: Staging
     steps:
       - name: Deploy
-        run: echo in Deploy to Staging! ${{env.VAULT_URL}}
+        run: echo in Deploy to Staging! ${{ env.VAULT_URL }}
   ProdDeploy:
     name: Deploy to Production
     needs: [StagingDeploy]
@@ -62,4 +62,4 @@ jobs:
       name: Prod
     steps:
       - name: Deploy
-        run: echo in Deploy to Prod! ${{env.VAULT_URL}}
+        run: echo in Deploy to Prod! ${{ env.VAULT_URL }}
